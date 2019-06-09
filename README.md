@@ -1,13 +1,13 @@
-# {{name}}
+# fresh-designs
 
-> {{description}}
+> This project is intended to 
 
-[![NPM](https://img.shields.io/npm/v/{{name}}.svg)](https://www.npmjs.com/package/{{name}}) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/fresh-designs.svg)](https://www.npmjs.com/package/fresh-designs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save {{name}}
+npm install --save fresh-designs
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save {{name}}
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from '{{name}}'
+import MyComponent from 'fresh-deisgns'
 
 class Example extends Component {
   render () {
@@ -28,4 +28,4 @@ class Example extends Component {
 
 ## License
 
-{{license}} © [{{author}}](https://github.com/{{author}})
+MIT © [soorajshankar](https://github.com/soorajshankar)

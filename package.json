@@ -4,7 +4,7 @@
   "description": "a simple react js design library",
   "author": "Sooraj",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/soorajshankar/fresh-designs",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
