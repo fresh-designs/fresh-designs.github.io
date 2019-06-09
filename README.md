@@ -1,6 +1,6 @@
 # fresh-designs
 
-> This project is intended to 
+> A fresh design library for reactJS with fresh components
 
 [![NPM](https://img.shields.io/npm/v/fresh-designs.svg)](https://www.npmjs.com/package/fresh-designs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -29,3 +29,5 @@ class Example extends Component {
 ## License
 
 MIT © [soorajshankar](https://github.com/soorajshankar)
+
+### This project and the components are in development.
