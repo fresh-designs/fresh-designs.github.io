@@ -1,11 +1,21 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import ExampleComponent from '{{name}}';
+import FreshCard from "fresh-designs";
 
 class App extends Component {
   render() {
-    return <ExampleComponent text='Modern React component module' />;
+    return (
+      <div>
+        <FreshCard.FreshCard
+          primaryText="Testing Fresh Header"
+          secondaryText="Test Test Test Test Test "
+          buttonText="view details"
+          onButtonClick={() => console.log("test")}
+        />
+        ;
+      </div>
+    );
   }
 }
 

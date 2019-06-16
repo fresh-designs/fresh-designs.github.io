@@ -1,13 +1,13 @@
 {
-  "name": "{{name}}-example",
-  "homepage": "https://{{author}}.github.io/{{name}}",
+  "name": "fresh-designs-example",
+  "homepage": "https://soorajshankar.github.io/fresh-designs",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "babel-loader": "^8.0.6",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4",
-    "{{name}}": "{{#if yarn}}link:..{{else}}file:..{{/if}}"
+    "react-scripts": "2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
