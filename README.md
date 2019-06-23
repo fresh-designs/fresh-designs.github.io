@@ -9,21 +9,34 @@
 ```bash
 npm install --save fresh-designs
 ```
+## Table of Contents
 
-## Usage
+- [Fresh Card](#fresh-card)
+
+### Fresh Card
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import {FreshCard} from "fresh-designs";
 
-import MyComponent from 'fresh-deisgns'
-
-class Example extends Component {
-  render () {
+class App extends Component {
+  render() {
     return (
-      <MyComponent />
-    )
+      <div>
+        <FreshCard
+          primaryText="Testing Fresh Header"
+          secondaryText="Test Test Test Test Test "
+          buttonText="view details"
+          onButtonClick={() => console.log("test")}
+        />
+        ;
+      </div>
+    );
   }
 }
+
+export default App;
+
 ```
 
 ## License

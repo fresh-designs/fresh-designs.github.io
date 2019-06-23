@@ -31,41 +31,45 @@ div.freshSecondaryText {
   padding-top: 5px;
 }
 .freshButton {
-	display: inline-block;
-    border-radius: 4px;
-    background-color: #ffff;
-    border: none;
-    color: #f4511e;
-    text-align: center;
-    font-size: 20px;
-    padding: inherit;
-    width: auto;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: inherit;
-  }
-  
-  .freshButton span {
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
-  }
-  
-  .freshButton span:after {
-	content: '\00bb';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-  }
-  
-  .freshButton:hover span {
-	padding-right: 25px;
-  }
-  
-  .freshButton:hover span:after {
-	opacity: 1;
-	right: 0;
-  }
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ffff;
+  border: none;
+  color: #f4511e;
+  text-align: center;
+  font-size: 20px;
+  padding: 14px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: inherit;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.freshButton:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.freshButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.freshButton span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.freshButton:hover span {
+  padding-right: 25px;
+}
+
+.freshButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
