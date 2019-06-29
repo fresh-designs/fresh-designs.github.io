@@ -4,6 +4,8 @@
 
 // import React, { Component } from "react";
 import FreshCard from "./FreshCard";
+import SB from "./SideBar";
+export const Sidebar = SB;
 // import styles from "./styles.css";
 
 // export type Props = { text: string };
