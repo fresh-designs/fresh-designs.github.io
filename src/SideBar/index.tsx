@@ -1,20 +1,24 @@
 import React from "react";
 import Hamburger from "../Buttons/HamBurger";
 import styles from "./styles.css";
-export interface SideBarProps {
+export interface ISideBarProps {
   colorPrimary?: string;
   colorSecondary?: string;
   colorAccent?: string;
+  options?: string[];
 }
 export interface IState {
   isOpen: boolean;
 }
 
-class SideBar extends React.PureComponent<SideBarProps, IState> {
+class SideBar extends React.PureComponent<ISideBarProps, IState> {
+  static defaultProps = {
+    options: []
+  };
   constructor(props: any) {
     super(props);
     this.state = {
-      isOpen: true
+      isOpen: false
     };
   }
   toggleNav = () => {
@@ -24,6 +28,7 @@ class SideBar extends React.PureComponent<SideBarProps, IState> {
   render() {
     const { sidebar, closebtn, main } = styles;
     const { isOpen } = this.state;
+    const { options = [] } = this.props;
 
     return (
       <>
@@ -35,9 +40,9 @@ class SideBar extends React.PureComponent<SideBarProps, IState> {
           <a onClick={this.toggleNav} className={closebtn}>
             <Hamburger isOpen={isOpen} />
           </a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
+          {options.map(option => (
+            <a href="#">{option}</a>
+          ))}
         </div>
         <div className={main} style={{ marginLeft: isOpen ? 250 : 50 }}>
           {this.props.children}
