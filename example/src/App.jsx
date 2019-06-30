@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import "./App.css";
-
-import FreshCard, { Sidebar } from "fresh-designs";
+import { Sidebar, FreshCard } from "fresh-designs";
+import { FaTachometerAlt,FaUserAlt } from "react-icons/fa";
 
 class App extends Component {
   render() {
     return (
       <>
-        <Sidebar>
+        <Sidebar
+          options={[
+            { value: "Dahboard", icon: <FaTachometerAlt /> },
+            { value: "Profile", icon: <FaUserAlt /> }
+          ]}
+        >
           <div style={{ maxWidth: 400, maxHeight: 700 }}>
-            <FreshCard.FreshCard
-              primaryText="Testing Fresh Header"
-              secondaryText="Test Test Test Test Test "
+            <FreshCard
+              primaryText="Fresh Header"
+              secondaryText="Secondary text a short brief about the card "
               buttonText="Details"
               onButtonClick={() => console.log("test")}
             />

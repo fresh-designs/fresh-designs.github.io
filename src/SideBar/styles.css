@@ -12,12 +12,13 @@
 }
 
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 16px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
-  transition: 0.3s;
+  white-space: nowrap;
+  transition: visibility 0s, opacity 0.6s linear;
 }
 
 .sidebar a:hover {
@@ -30,6 +31,18 @@
   right: 0;
   font-size: 36px;
   margin-left: 50px;
+}
+.open {
+  width: 250px;
+}
+.closed {
+  width: 50px;
+}
+.closed a span {
+  display: none;
+}
+.closed .closebtn {
+  opacity: 1;
 }
 
 .openbtn {
@@ -46,12 +59,42 @@
 }
 
 .main {
-  transition: margin-left .5s;
+  transition: margin-left 0.5s;
   padding: 16px;
 }
+.main.open {
+  margin-left: 250px;
+}
+.main.closed {
+  margin-left: 50px;
+}
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  .sidebar.open {
+    width: 100%;
+  }
+  .sidebar.closed {
+    width: 100%;
+  }
+  .main {
+    margin-left: 0;
+  }
+  .sidebar .closebtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }
