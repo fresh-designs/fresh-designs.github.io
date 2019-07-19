@@ -16,6 +16,10 @@ export interface option {
    *@value: value to be shown on the sidebar menu
    */
   value: string;
+  /**
+   *@value: value to be shown on the sidebar menu
+   */
+  onClick: Function;
 }
 export interface IState {
   isOpen: boolean;
@@ -57,10 +61,10 @@ class SideBar extends React.PureComponent<ISideBarProps, IState> {
           <a onClick={this.toggleNav} className={closebtn}>
             <Hamburger isOpen={isOpen} />
           </a>
-          {options.map(({ value, icon }, index) => (
-            <a href="#" key={index}>
+          {options.map(({ value, icon, onClick = () => {} }, index) => (
+            <a href="javascript:void" onClick={() => onClick()} key={index}>
               <i>{icon}</i>
-              <span>{value}</span>
+              <span style={{ paddingLeft: 10 }}>{value}</span>
             </a>
           ))}
         </div>

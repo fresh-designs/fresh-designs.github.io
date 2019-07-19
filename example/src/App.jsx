@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 
 import { Sidebar, FreshCard } from "fresh-designs";
-
+const onClick=test=>console.log("test")
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Sidebar>
+        <Sidebar options={[{icon:"T",value:"Test",onClick}]}>
           <div style={{ maxWidth: 400, maxHeight: 700 }}>
             <FreshCard
               primaryText="Testing Fresh Header"
