@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Hamburger from "../Buttons/HamBurger";
 import styles from "./styles.css";
 export interface ISideBarProps {

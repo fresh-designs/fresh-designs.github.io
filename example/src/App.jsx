@@ -1,28 +1,23 @@
 import React, { Component } from "react";
 import "./App.css";
+
 import { Sidebar, FreshCard } from "fresh-designs";
-import { FaTachometerAlt,FaUserAlt } from "react-icons/fa";
 
 class App extends Component {
   render() {
     return (
-      <>
-        <Sidebar
-          options={[
-            { value: "Dahboard", icon: <FaTachometerAlt /> },
-            { value: "Profile", icon: <FaUserAlt /> }
-          ]}
-        >
+      <React.Fragment>
+        <Sidebar>
           <div style={{ maxWidth: 400, maxHeight: 700 }}>
             <FreshCard
-              primaryText="Fresh Header"
-              secondaryText="Secondary text a short brief about the card "
+              primaryText="Testing Fresh Header"
+              secondaryText="Test Test Test Test Test "
               buttonText="Details"
               onButtonClick={() => console.log("test")}
             />
           </div>
         </Sidebar>
-      </>
+      </React.Fragment>
     );
   }
 }

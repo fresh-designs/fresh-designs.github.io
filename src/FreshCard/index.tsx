@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styles from "./styles.css";
 export interface FreshCardProps {
   colorPrimary?: string;
@@ -18,7 +18,7 @@ class FreshCard extends React.PureComponent<FreshCardProps, {}> {
     primaryText: "primaryText is missing in the props",
     secondaryText: "",
     onButtonClick: () => undefined
-  }
+  };
   render() {
     const {
       colorPrimary,
@@ -56,11 +56,8 @@ class FreshCard extends React.PureComponent<FreshCardProps, {}> {
           {secondaryText}
         </div>
         {buttonText && (
-          <button
-            className={`${freshButton}`}
-            onClick={onButtonClick}
-          >
-            <span >{buttonText}</span>
+          <button className={`${freshButton}`} onClick={onButtonClick}>
+            <span>{buttonText}</span>
           </button>
         )}
       </div>

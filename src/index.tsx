@@ -1,36 +1,32 @@
 /**
- * @class FreshDesigns
+ * @class ExampleComponent
  */
 
+import * as React from "react";
+
+import styles from "./styles.css";
 import FC from "./FreshCard";
 import SB from "./SideBar";
-/**
- *Sidebar Component
- *
- * Sample Usage
- *<Sidebar options={[
- *  { value: "Dahboard", icon: <Icon /> },
- *  { value: "Profile", icon: <Icon /> }]}>
- *    <div>DashBoard Content<div/>
- * <Sidebar/>
- *
- **/
-export const Sidebar = SB;
-/**
- *
- * FreshCard Component
- * A Simple Card component designed specially for dashboards
- **/
 export const FreshCard = FC;
-// import styles from "./styles.css";
-
-// export type Props = { text: string };
-
-// export default class ExampleComponent extends Component<Props> {
-//   render() {
-//     const { text } = this.props;
-
-//     return <div className={styles.test}> Component: {text}</div>;
-//   }
-// }
+export const Sidebar = SB;
 export default { FreshCard, Sidebar };
+
+export type Props = { text: string };
+
+export class ExampleComponent extends React.Component<Props> {
+  render() {
+    const { text } = this.props;
+
+    return (
+      <div className={styles.test}>
+        Example Component: {text}
+        <FreshCard
+          primaryText="Fresh Header"
+          secondaryText="Secondary text a short brief about the card "
+          buttonText="Details"
+          onButtonClick={() => console.log("test")}
+        />
+      </div>
+    );
+  }
+}
