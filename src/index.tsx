@@ -5,8 +5,12 @@
 import * as React from "react";
 
 import styles from "./styles.css";
-import FreshCard from "./FreshCard";
-export default { FreshCard };
+import FC from "./FreshCard";
+import SB from "./SideBar";
+export const FreshCard = FC;
+export const Sidebar = SB;
+export default { FreshCard, Sidebar };
+
 export type Props = { text: string };
 
 export class ExampleComponent extends React.Component<Props> {
