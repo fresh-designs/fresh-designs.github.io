@@ -11,8 +11,8 @@ div.freshSimplecard {
   margin: 10px;
 }
 .animateUp:hover {
-  -webkit-transform: translate(0, -3px);
-  transform: translate(0, -3px);
+  -webkit-transform: translate(0, -1px);
+  transform: translate(0, -1px);
 }
 div.hoverShadow:hover {
   -webkit-background-clip: text;
@@ -22,7 +22,7 @@ div.hoverShadow:hover {
 }
 div.freshPrimaryText {
   padding: inherit;
-  font-size: -webkit-xxx-large;
+  font-size: x-large;
   cursor: default;
 }
 div.freshSecondaryText {
@@ -35,9 +35,9 @@ div.freshSecondaryText {
   border-radius: 4px;
   background-color: #ffff;
   border: none;
-  color: #f4511e;
+  color: #4050d8;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   padding: 14px;
   width: auto;
   transition: all 0.5s;

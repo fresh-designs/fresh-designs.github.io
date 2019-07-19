@@ -12,8 +12,8 @@ export interface FreshCardProps {
 }
 class FreshCard extends React.PureComponent<FreshCardProps, {}> {
   static defaultProps = {
-    colorPrimary: "#da1b60",
-    colorSecondary: "#ff8a00",
+    colorPrimary: "#4050d8",
+    colorSecondary: "#4050d8",
     colorAccent: "white",
     primaryText: "primaryText is missing in the props",
     secondaryText: "",
