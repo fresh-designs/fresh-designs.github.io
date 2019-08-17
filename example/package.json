@@ -1,7 +1,7 @@
 {
   "name": "fresh-designs-example",
   "homepage": "https://.github.io/fresh-designs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "private": false,
   "dependencies": {
@@ -16,5 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
