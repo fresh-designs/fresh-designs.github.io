@@ -6,10 +6,12 @@ import * as React from "react";
 
 import styles from "./styles.css";
 import FC from "./FreshCard";
+import IL from "./ImageLoader";
 import SB from "./SideBar";
 export const FreshCard = FC;
 export const Sidebar = SB;
-export default { FreshCard, Sidebar };
+export const ImageLoader = IL;
+export default { FreshCard, Sidebar, ImageLoader };
 
 export type Props = { text: string };
 
