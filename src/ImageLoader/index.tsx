@@ -2,6 +2,7 @@ import * as React from "react";
 import styles from "./styles.css";
 export interface IImageProps {
   src?: string;
+  style?: StyleSheet;
 }
 class ImageLoader extends React.PureComponent<IImageProps, {}> {
   state = { error: null, loading: true };
@@ -20,9 +21,9 @@ class ImageLoader extends React.PureComponent<IImageProps, {}> {
   render = () => {
     const { src } = this.props;
     const { error, loading } = this.state;
-    const { loader, hidden, visible } = styles;
+    const { loader, hidden, visible, style, curved } = styles;
     return (
-      <div className={loading ? loader : "test"}>
+      <div className={loading ? loader : style}>
         <img
           src={
             error
@@ -31,7 +32,7 @@ class ImageLoader extends React.PureComponent<IImageProps, {}> {
           }
           onError={this.onError}
           onLoad={this.onLoad}
-          className={loading ? hidden : visible}
+          className={loading ? hidden : `${visible} ${style} ${curved}`}
         />
       </div>
     );

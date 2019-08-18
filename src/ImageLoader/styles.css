@@ -2,8 +2,8 @@
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
@@ -12,6 +12,13 @@
 }
 .visible {
   display: block;
+}
+.curved {
+  border-radius: 25px;
+  padding: 20px;
+}
+.style {
+  max-width: 500px;
 }
 
 /* Safari */
