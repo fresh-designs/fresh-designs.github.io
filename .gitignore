@@ -1,14 +1,8 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# IDE Stuff
-/.idea
-/.vscode
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
 node_modules
-
-# testing
-/coverage
 
 # builds
 build
@@ -26,7 +20,3 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-package-lock.json
-yarn.lock
-example/yarn.lock
