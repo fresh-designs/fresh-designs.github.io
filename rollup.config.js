@@ -1,44 +1,129 @@
-import typescript from "rollup-plugin-typescript2";
+import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
-import external from "rollup-plugin-peer-deps-external";
-// import postcss from 'rollup-plugin-postcss-modules'
-import postcss from "rollup-plugin-postcss";
 import resolve from "rollup-plugin-node-resolve";
-import url from "rollup-plugin-url";
-import svgr from "@svgr/rollup";
+import external from "rollup-plugin-peer-deps-external";
+import { terser } from "rollup-plugin-terser";
+import { uglify } from "rollup-plugin-uglify";
+import packageJSON from "./package.json";
 
-import pkg from "./package.json";
+const input = "./src/index.js";
+const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, ".min.js");
 
-export default {
-  input: "src/index.tsx",
-  output: [
-    {
-      file: pkg.main,
+export default [
+  // CommonJS
+  {
+    input,
+    output: {
+      file: packageJSON.main,
       format: "cjs",
-      exports: "named",
       sourcemap: true
     },
-    {
-      file: pkg.module,
-      format: "es",
-      exports: "named",
+    plugins: [
+      babel({
+        exclude: "node_modules/**"
+      }),
+      external(),
+      resolve(),
+      commonjs()
+    ]
+  },
+  {
+    input,
+    output: {
+      file: minifyExtension(packageJSON.main),
+      format: "cjs",
       sourcemap: true
-    }
-  ],
-  plugins: [
-    external(),
-    postcss({
-      modules: true
-    }),
-    url({ exclude: ["**/*.svg"] }),
-    svgr(),
-    resolve(),
-    typescript({
-      rollupCommonJSResolveHack: true,
-      clean: true
-    }),
-    commonjs({
-      include: "node_modules/**"
-    })
-  ]
-};
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**"
+      }),
+      external(),
+      resolve(),
+      commonjs(),
+      uglify()
+    ]
+  },
+  // UMD
+  {
+    input,
+    output: {
+      file: packageJSON.browser,
+      format: "umd",
+      sourcemap: true,
+      name: "reactSampleComponentsLibrary",
+      globals: {
+        react: "React",
+        "@emotion/styled": "styled",
+        "@emotion/core": "core"
+      }
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**"
+      }),
+      external(),
+      resolve(),
+      commonjs()
+    ]
+  },
+  {
+    input,
+    output: {
+      file: minifyExtension(packageJSON.browser),
+      format: "umd",
+      sourcemap: true,
+      name: "reactSampleComponentsLibrary",
+      globals: {
+        react: "React",
+        "@emotion/styled": "styled",
+        "@emotion/core": "core"
+      }
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**"
+      }),
+      external(),
+      resolve(),
+      commonjs(),
+      terser()
+    ]
+  },
+  // ES
+  {
+    input,
+    output: {
+      file: packageJSON.module,
+      format: "es",
+      sourcemap: true,
+      exports: "named"
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**"
+      }),
+      external(),
+      resolve(),
+      commonjs()
+    ]
+  },
+  {
+    input,
+    output: {
+      file: minifyExtension(packageJSON.module),
+      format: "es",
+      sourcemap: true,
+      exports: "named"
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**"
+      }),
+      external(),
+      resolve(),
+      commonjs(),
+      terser()
+    ]
+  }
+];

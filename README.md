@@ -1,46 +1,12 @@
-# fresh-designs
+# Sample React components library
 
-> A fresh design library for reactJS with fresh components
+Created for the purpose of ["Let's build React Components library!" tutorial on Medium.com"](https://medium.com/p/f5a390d5973d).
 
-[![NPM](https://img.shields.io/npm/v/fresh-designs.svg)](https://www.npmjs.com/package/fresh-designs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+Created with:
+- **React, Emotion** for creating and styling components,
+- **Jest**, **react-testing-library** for testing the components,
+- **Rollup**, **Babel** for bundling the library,
+- **Styleguidist** for live development and documentation generation,
+- **TravisCI** for auto deployment to GitHub pages.
 
-## Install
-
-```bash
-npm install --save fresh-designs
-```
-## Table of Contents
-
-- [Fresh Card](#fresh-card)
-
-### Fresh Card
-
-```tsx
-import React, { Component } from "react";
-import {FreshCard} from "fresh-designs";
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <FreshCard
-          primaryText="Testing Fresh Header"
-          secondaryText="Test Test Test Test Test "
-          buttonText="view details"
-          onButtonClick={() => console.log("test")}
-        />
-        ;
-      </div>
-    );
-  }
-}
-
-export default App;
-
-```
-
-## License
-
-MIT © [soorajshankar](https://github.com/soorajshankar)
-
-### This project and the components are in development.
+Deployed documentation: ["tfiechowski.github.io/react-sample-components-library"](https://tfiechowski.github.io/react-sample-components-library/)
