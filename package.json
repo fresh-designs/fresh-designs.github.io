@@ -10,11 +10,14 @@
   ],
   "scripts": {
     "test": "jest",
-    "start": "styleguidist server",
+    "start": "yarn storybook",
+    "start:styleguidist": "styleguidist server",
     "build": "rollup -c",
     "prepublishOnly": "rm -rf lib && npm run build",
     "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-    "docs:build": "styleguidist build"
+    "docs:build": "styleguidist build",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +32,11 @@
     "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.3.14",
     "@testing-library/react": "^8.0.7",
     "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.14",

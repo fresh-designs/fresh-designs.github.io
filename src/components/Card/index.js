@@ -9,9 +9,16 @@ const defaultTheme = {
 };
 
 const Card = ({
-  title = "Head",
-  subtitle = "subtitle",
-  theme = defaultTheme
+  title = "",
+  subtitle = "",
+  content = "",
+  width,
+  theme = defaultTheme,
+  buttonText = "Submit",
+  buttonDisabled = false,
+  buttonPosition = "right",
+  onButtonClick = () =>
+    console.debug("Please pass a valid onButtonClick property to <Card />")
 }) => {
   const Title = styled.h1`
     /* text-align: center; */
@@ -29,7 +36,7 @@ const Card = ({
   const Button = styled.button`
     width: fit-content;
     padding: 0.5rem;
-    margin: 0.5rem 0.1rem;
+    margin: 0.5rem 0;
     color: ${theme.pHead};
     background-color: ${theme.pAccent};
     border: 1em;
@@ -55,9 +62,11 @@ const Card = ({
     font-weight: 100;
     min-height: 10em;
     min-width: 10em;
+    ${width && `width:${width}`};
   `;
+  const footerAlign = buttonPosition === "left" ? "flex-start" : "flex-end";
   const Footer = styled.div`
-    align-self: flex-end;
+    align-self: ${footerAlign};
   `;
   const Container = styled.div`
     flex-grow: 1;
@@ -69,11 +78,11 @@ const Card = ({
     <CardDiv>
       <Title>{title}</Title>
       <SubTitle>{subtitle}</SubTitle>
-      <Container>
-        Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah{" "}
-      </Container>
+      <Container>{content}</Container>
       <Footer>
-        <Button size="small">Submit</Button>
+        <Button size="small" onClick={onButtonClick} disabled={buttonDisabled}>
+          {buttonText}
+        </Button>
       </Footer>
     </CardDiv>
   );
