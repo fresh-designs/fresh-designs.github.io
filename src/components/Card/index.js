@@ -89,3 +89,10 @@ const Card = ({
 };
 
 export default Card;
+
+export const Grid = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-direction: "row";
+`;

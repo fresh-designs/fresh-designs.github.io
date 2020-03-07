@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import Card from "../components/Card";
+import Card, { Grid } from "../components/Card";
 import { withKnobs, text, color, number } from "@storybook/addon-knobs";
 
 export default {
@@ -21,10 +21,10 @@ export const BasicUse = () => {
 export const Advanced = () => {
   const title = text("title", "A DifferentTheme");
   const subtitle = text("subtitle", "a simple card component");
-  const content = text("content", '');
+  const content = text("content", "");
   const onButtonClick = action("clicked");
-  const width = text("width", "30em");// css width attributes
-  const footerAlign = text("footerAlign", "left");// left||right
+  const width = text("width", "30em"); // css width attributes
+  const footerAlign = text("footerAlign", "left"); // left||right
 
   const pHead = color("theme.pHead", "#ffffff");
   const pSubHead = color("theme.pSubHead", "#ffffffaa");
@@ -43,5 +43,26 @@ export const Advanced = () => {
       width={width}
       {...{ title, subtitle, content, onButtonClick, theme, footerAlign }}
     />
+  );
+};
+
+export const CardsGrid = () => {
+  const subtitle = text("subtitle", "a simple card component");
+  const content = text("content", null);
+  const onButtonClick = action("clicked");
+
+  return (
+    <Grid>
+      {Array.from({ length: 17 }).map((_, i) => (
+        <Card
+          {...{
+            title: `Item ${i}`,
+            subtitle,
+            content,
+            onButtonClick
+          }}
+        />
+      ))}
+    </Grid>
   );
 };
