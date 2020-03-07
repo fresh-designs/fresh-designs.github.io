@@ -1,52 +1,47 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import Card from "../components/Card";
+import { withKnobs, text, color, number } from "@storybook/addon-knobs";
 
 export default {
   title: "Card",
-  component: Card
+  component: Card,
+  decorators: [withKnobs]
 };
 
-export const Default = () => (
-  <Card title="Fresh Designs" subtitle="a simple card component" />
-);
+export const BasicUse = () => {
+  const title = text("title", "A Fresh Card");
+  const subtitle = text("subtitle", "a simple card component");
+  const content = text("content", null);
+  const onButtonClick = action("clicked");
 
-const theme = {
-  pHead: "#ffffff",
-  pSubHead: "#ffffffaa",
-  pBG: "#230444",
-  pAccent: "#90303d"
+  return <Card {...{ title, subtitle, content, onButtonClick }} />;
 };
-export const DifferentTheme = () => (
-  <Card
-    title="Different Theme"
-    subtitle="subtitle"
-    content="Your content here"
-    {...{ theme }}
-  />
-);
-export const CustomWidth = () => (
-  <Card
-    title="Custom Width"
-    subtitle="width='max-content'"
-    content="Your content here Your content here Your content here Your content here Your content here "
-    width="max-content"
-  />
-);
-export const Custom = () => (
-  <Card
-    title="Custom Width"
-    subtitle="width='max-content'"
-    content="Your content here Your content here Your content here Your content here Your content here "
-    width="max-content"
-  />
-);
 
-export const LeftButton = () => (
-  <Card
-    title="Custom Width"
-    subtitle="width='max-content'"
-    content="Your content here Your content here Your content here Your content here Your content here "
-    buttonPosition="left"
-  />
-);
+export const Advanced = () => {
+  const title = text("title", "A DifferentTheme");
+  const subtitle = text("subtitle", "a simple card component");
+  const content = text("content", '');
+  const onButtonClick = action("clicked");
+  const width = text("width", "30em");// css width attributes
+  const footerAlign = text("footerAlign", "left");// left||right
+
+  const pHead = color("theme.pHead", "#ffffff");
+  const pSubHead = color("theme.pSubHead", "#ffffffaa");
+  const pBG = color("theme.pBG", "#230444");
+  const pAccent = color("theme.pAccent", "#90303d");
+
+  const theme = {
+    pHead,
+    pSubHead,
+    pBG,
+    pAccent
+  };
+
+  return (
+    <Card
+      width={width}
+      {...{ title, subtitle, content, onButtonClick, theme, footerAlign }}
+    />
+  );
+};

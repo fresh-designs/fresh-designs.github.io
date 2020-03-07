@@ -16,7 +16,7 @@ const Card = ({
   theme = defaultTheme,
   buttonText = "Submit",
   buttonDisabled = false,
-  buttonPosition = "right",
+  footerAlign = "right",
   onButtonClick = () =>
     console.debug("Please pass a valid onButtonClick property to <Card />")
 }) => {
@@ -64,9 +64,9 @@ const Card = ({
     min-width: 10em;
     ${width && `width:${width}`};
   `;
-  const footerAlign = buttonPosition === "left" ? "flex-start" : "flex-end";
+  const footerAlignV = footerAlign === "left" ? "flex-start" : "flex-end";
   const Footer = styled.div`
-    align-self: ${footerAlign};
+    align-self: ${footerAlignV};
   `;
   const Container = styled.div`
     flex-grow: 1;
