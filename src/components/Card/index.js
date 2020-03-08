@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "@emotion/styled";
+import { ThemeContext } from "../Theme";
 
 const defaultTheme = {
   pHead: "#ffffff",
@@ -13,16 +14,18 @@ const Card = ({
   subtitle = "",
   content = "",
   width,
-  theme = defaultTheme,
+  theme,
   buttonText = "Submit",
   buttonDisabled = false,
   footerAlign = "right",
   onButtonClick = () =>
     console.debug("Please pass a valid onButtonClick property to <Card />")
 }) => {
+  const themeC = useContext(ThemeContext);
+  theme = theme || themeC || defaultTheme;
   const Title = styled.h1`
     /* text-align: center; */
-    color: ${defaultTheme.pHead};
+    color: ${theme.pHead};
     margin: 1rem 0 0.4rem 0;
   `;
   const SubTitle = styled.h3`
