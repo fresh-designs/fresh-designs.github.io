@@ -5,7 +5,7 @@ const themes = {
     background: "#eeeeee",
     pHead: "#ffffff",
     pSubHead: "#ffffffaa",
-    pBG: "red",
+    pBG: '#dde1fb',
     pAccent: "#3282b8"
   },
   dark: {
@@ -18,7 +18,7 @@ const themes = {
   }
 };
 
-export const ThemeContext = React.createContext(themes.light);
+export const ThemeContext = React.createContext(themes.dark);
 
 export const ThemeProvider = ({ children, theme }) => {
   const [themeV, setTheme] = useState(theme || themes.light);

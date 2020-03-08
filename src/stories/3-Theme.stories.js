@@ -11,10 +11,12 @@ export default {
 };
 const themes = {
   light: {
-    pHead: "#000",
-    pSubHead: "#000a",
-    pBG: "#fff",
-    pAccent: "grey"
+    foreground: "#000000",
+    background: "#eeeeee",
+    pHead: "#3282b8",
+    pSubHead: "#3282b8",
+    pBG: "#dde1fb",
+    pAccent: "#ffffff"
   },
   dark: {
     pHead: "#ffffff",
@@ -25,16 +27,14 @@ const themes = {
 };
 
 export const Themed = () => {
-  const [theme, setTheme] = useState(themes.light);
+  const [theme, setTheme] = useState(themes.dark);
   const subtitle = text("subtitle", "a simple card component");
   const content = text("content", null);
   const onButtonClick = () =>
     setTheme(thm => (thm === themes.light ? themes.dark : themes.light));
 
   return (
-    <div
-      style={{ backgroundColor: `${theme === themes.dark ? "white" : "grey"}` }}
-    >
+    <div>
       <ThemeProvider theme={theme}>
         <Grid>
           {Array.from({ length: 17 }).map((_, i) => (
