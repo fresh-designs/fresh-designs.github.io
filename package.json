@@ -1,6 +1,6 @@
 {
   "name": "fresh-designs",
-  "version": "1.2.1-alpha.0",
+  "version": "1.2.1",
   "description": "",
   "main": "lib/index.js",
   "browser": "lib/index.umd.js",
