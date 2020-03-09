@@ -15,9 +15,9 @@
     "build": "rollup -c",
     "prepublishOnly": "rm -rf lib && npm run build",
     "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-    "docs:build": "styleguidist build",
+    "docs:build": "build-storybook -o public",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -o public",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
