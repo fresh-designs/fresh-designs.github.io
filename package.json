@@ -15,10 +15,11 @@
     "build": "rollup -c",
     "prepublishOnly": "rm -rf lib && npm run build",
     "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-    "docs:build": "build-storybook -o public",
+    "docs:build": "build-storybook -o docs",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook -o public",
-    "deploy-storybook": "storybook-to-ghpages"
+    "build-storybook": "build-storybook -o docs",
+    "deploy-storybook": "storybook-to-ghpages",
+    "deploy": "gh-pages -d docs"
   },
   "keywords": [],
   "author": "",
