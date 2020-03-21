@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import useFadeIn from '../../hooks/useFadeIn'
 
 export const FadeIn = ({duration = 1, children}) => {
@@ -7,3 +8,10 @@ export const FadeIn = ({duration = 1, children}) => {
 }
 
 export default FadeIn
+
+FadeIn.propTypes = {
+  duration: PropTypes.number,
+  /**
+   When a button is in the loading state you can supply custom text
+  */
+}

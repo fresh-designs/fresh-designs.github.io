@@ -1,0 +1,23 @@
+import {Meta, Story, Props} from '@storybook/addon-docs/blocks'
+import FadeIn from './index'
+import Card from '../Card'
+
+<Meta title="FadeIn" component={FadeIn} />
+
+# FadeIn
+
+FadeIn component will add `FadeIn` effect to the components wrapped inside.
+
+<Story name="FadeInStory" height="500px">
+  <FadeIn>
+    <Card
+      title="Fade In"
+      subtitle="a simple card component"
+      buttonText="Switch theme"
+    />
+  </FadeIn>
+</Story>
+
+## Props
+
+<Props of={FadeIn} />

@@ -14,11 +14,9 @@ export const FadeInStory = () => {
   return (
     <FadeIn>
       <Card
-        {...{
-          title: `Fade In`,
-          subtitle: 'a simple card component',
-          buttonText: 'Switch theme',
-        }}
+        title="Fade In"
+        subtitle="a simple card component"
+        buttonText="Switch theme"
       />
     </FadeIn>
   )
