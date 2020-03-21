@@ -17,7 +17,7 @@
     "prepublishOnly": "rm -rf lib && npm run build",
     "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook -o docs",
+    "build-storybook": "yarn build:docs",
     "deploy-storybook": "storybook-to-ghpages",
     "deploy": "gh-pages -d docs"
   },
